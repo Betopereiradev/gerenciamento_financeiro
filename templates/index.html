@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../static/style/index.css">
+
+    <title>Página Inicial</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>B$</h1>
+        </div>
+
+        <div class="drt">
+            <div class="balance">
+                <h3>3200 BRL</h3>
+                <p>Saldo na conta</p>
+            </div>
+            <div class="registro">
+                <button class="btn-1" onclick="document.getElementById('myModal').style.display='block'">Registrar
+                    Transferência</button>
+            </div>
+
+            <!-- Modal para registrar a transação -->
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+
+                    <h2>Adicionar Transação</h2>
+                    <form action="transacao">
+                        <label for="tipo-trans" name="tipo-trans">Selecione o tipo:</label>
+                        <select name="opcoes" id="opcoes">
+                            <option value="pix">PIX</option>
+                            <option value="boleto">BOLETO</option>
+                            <option value="deposito">DEPÓSITO</option>
+                            <option value="saque">SAQUE</option>
+                        </select>
+
+                        <label for="entsai-trans" name="entsai-trans">Entrada ou Saída:</label>
+                        <select name="entsai" id="entsai">
+                            <option value="pix">Entrada</option>
+                            <option value="boleto">Saída</option>
+
+                        </select>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="pesquisa">
+        <input type="text" id="filtrar" placeholder="Procure uma transação">
+    </section>
+
+    <main class="registros">
+        <div class="parte-entradas">
+            <h4>Entradas</h4>
+            <div class="entradas">
+                <ul class="reg">
+                    <li class="reg-item">
+                        <p id="tipo-trans">Transferência Bancária</p>
+                        <p id="entsai-trans">Entrada</p>
+                        <p id="valor-trans">500</p>
+                        <p id="data-trans">05/08/2000</p>
+                        <p id="desc-trans">Valor que o joão me devia</p>
+                    </li>
+
+                    <li class="reg-item">
+                        <p id="tipo-trans">Depósito</p>
+                        <p id="entsai-trans">Entrada</p>
+                        <p id="valor-trans">1300</p>
+                        <p id="data-trans">05/08/2000</p>
+                        <p id="desc-trans">Meu Salário</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="parte-saidas">
+            <h4>Saídas</h4>
+            <div class="saidas">
+                <ul class="reg">
+                    <li class="reg-item">
+                        <p id="tipo-trans">Transferência Bancária</p>
+                        <p id="tipo--trans">Saída</p>
+                        <p id="valor-trans">500</p>
+                        <p id="data-trans">05/08/2000</p>
+                        <p id="desc-trans">Valor que o joão me devia</p>
+                    </li>
+
+                    <li class="reg-item">
+                        <p id="tipo-trans">Depósito</p>
+                        <p id="tipo--trans">Saída</p>
+                        <p id="valor-trans">1300</p>
+                        <p id="data-trans">05/08/2000</p>
+                        <p id="desc-trans">Meu Salário</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="../static/script.js"></script>
+</body>
+
+</html>
